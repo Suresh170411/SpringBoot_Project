@@ -31,7 +31,7 @@ public class LoginController {
 			 throw new BadCredentialsException("Invalid Username or password");
 		 }
 		 
-		 return new ResponseEntity<>(customer.get(), HttpStatus.ACCEPTED);
+		 return new ResponseEntity<>(customer.get(), HttpStatus.ACCEPTED); 
 		
 		
 	}
