@@ -19,7 +19,7 @@ public class LoginController {
 	@Autowired
 	private CustomerRepo customerRepository;
 	
-	@GetMapping("/signIn")
+	@GetMapping("/signIn") 
 	public ResponseEntity<Customer> getLoggedInCustomerDetailsHandler(Authentication auth){
 		
 		
