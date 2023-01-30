@@ -22,7 +22,6 @@ public class LoginController {
 	@GetMapping("/signIn")
 	public ResponseEntity<Customer> getLoggedInCustomerDetailsHandler(Authentication auth){
 		
-		
 		 Optional<Customer> customer= customerRepository.findByEmail(auth.name()); //getName();
 		
 		 //to get the token in body, pass HttpServletResponse inside this method parameter 
