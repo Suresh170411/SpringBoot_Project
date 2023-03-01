@@ -3,8 +3,10 @@ package com.masai;
 public class Main {
 	
 	public static void main(String[] args) {
-		Demo d = new Demo();
+		int mask = 0x000F;
 		
-		d.start();
+		int value = 0x2222;
+		
+		System.out.println(mask & value);
 	}
 }
