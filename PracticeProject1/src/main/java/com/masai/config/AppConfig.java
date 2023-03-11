@@ -1,4 +1,4 @@
-package com.masai.configuration;
+package com.masai.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +21,8 @@ public class AppConfig {
 		.and()
 		.csrf().disable()
 		.authorizeHttpRequests()
-		.requestMatchers(HttpMethod.POST, "/customers").permitAll()
+		.requestMatchers(HttpMethod.POST, "/student").permitAll()
+		.requestMatchers("/swagger-ui*/**","/v3/api-docs/**").permitAll()
 		.anyRequest().authenticated().and()
 		.addFilterAfter(new JwtTokenGeneratorFilter(), BasicAuthenticationFilter.class)
 		.addFilterBefore(new JwtTokenValidatorFilter(), BasicAuthenticationFilter.class)
@@ -39,4 +40,5 @@ public class AppConfig {
 		return new BCryptPasswordEncoder();
 
 	}
+
 }
